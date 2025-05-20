@@ -1,6 +1,8 @@
 CC
 https://chatgpt.com/share/682c883b-5b70-8013-8db7-f65810adf886
 
+tar -xvf jdk-8u101-linux-i586.tar.gz
+
 wget https://archive.apache.org/dist/hadoop/core/hadoop-2.7.3/hadoop-2.7.3.tar.gz
 tar -xvf hadoop-2.7.3.tar.gz
 
