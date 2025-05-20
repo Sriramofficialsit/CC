@@ -1,3 +1,6 @@
+javac -classpath $HADOOP_HOME/share/hadoop/common/hadoop-common-2.7.3.jar:$HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.7.3.jar -d . WordCount.java
+
+
 import java.io.IOException;
 import java.util.StringTokenizer;
 import org.apache.hadoop.conf.Configuration;
