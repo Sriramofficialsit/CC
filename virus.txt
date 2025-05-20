@@ -18,3 +18,62 @@ export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 
 
 source ~/.bashrc
+
+
+cd ~/hadoop-2.7.3/etc/hadoop/
+vi core-site.xml
+<property>
+  <name>fs.default.name</name>
+  <value>hdfs://localhost:9000</value>
+</property>
+
+
+
+vi hdfs-site.xml
+<property>
+  <name>dfs.replication</name>
+  <value>1</value>
+</property>
+<property>
+  <name>dfs.permission</name>
+  <value>false</value>
+</property>
+
+
+
+cp mapred-site.xml.template mapred-site.xml
+vi mapred-site.xml
+
+<property>
+  <name>mapreduce.framework.name</name>
+  <value>yarn</value>
+</property>
+
+
+vi yarn-site.xml
+
+<property>
+  <name>yarn.nodemanager.aux-services</name>
+  <value>mapreduce_shuffle</value>
+</property>
+<property>
+  <name>yarn.nodemanager.auxservices.mapreduce.shuffle.class</name>
+  <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+</property>
+
+
+vi hadoop-env.sh
+
+export JAVA_HOME=~/jdk1.8.0_101
+
+cd ~/hadoop-2.7.3
+bin/hadoop namenode -format
+
+
+cd sbin
+./start-all.sh
+
+jps
+
+http://localhost:50070/dfshealth.html
+
