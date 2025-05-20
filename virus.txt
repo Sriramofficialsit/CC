@@ -76,4 +76,4 @@ cd sbin
 jps
 
 http://localhost:50070/dfshealth.html
-
+http://localhost:8080/cluster
