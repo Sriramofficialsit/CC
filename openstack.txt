@@ -40,7 +40,7 @@ If it did not work:
 ==========================
 sudo apt install net-tools
 ==========================
-
+cat <<EOF > localrc
 [[local|localrc]]
 ADMIN_PASSWORD=secret
 DATABASE_PASSWORD=\$ADMIN_PASSWORD
